@@ -273,6 +273,9 @@
     &:focus {
       outline-color: var(--color-green-600);
     }
+    &.invalid {
+      border-color: var(--color-red);
+    }
   }
   input[type="radio"], input[type="checkbox"] {
     cursor: pointer;
@@ -302,6 +305,9 @@
     }
     &:focus {
       outline-color: var(--color-green-600);
+    }
+    &.invalid {
+      border-color: var(--color-red);
     }
   }
   button {

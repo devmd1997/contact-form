@@ -24,7 +24,7 @@
         </div>
   <main>
     <header>Contact Us</header>
-    <form action="" novalidate>
+    <form id="contact-form" action="" novalidate>
       <fieldset name="personal-info">
 
         <div class="form-element">
@@ -47,7 +47,7 @@
         <span id="email-error" class="sr-only error-text">Please enter a valid email address</span>
       </div>
 
-      <fieldset name="query-type" aria-invalid="true" aria-describedby="query-type-error">
+      <fieldset id="query-type" name="query-type" aria-invalid="true" aria-describedby="query-type-error">
 
         <legend>Query Type <span aria-hidden="true">*</span></legend>
 
@@ -81,7 +81,7 @@
         <span id="consent-error" class="sr-only error-text">To submit this form, please consent to being contacted</span>
       </div>
 
-      <button type="submit">Submit</button>
+      <button id="submit-button" type="submit">Submit</button>
     </form>
   </main>
   <div class="attribution">
