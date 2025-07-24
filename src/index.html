@@ -15,38 +15,80 @@
   </style>
 </head>
 <body>
+        <div id="success-message" class="hidden toast-message" role="alert">
+          <p class="toast-title">
+            <img src="../assets/images/icon-success-check.svg" alt="">
+            Message Sent!
+          </p>
+          <p class="text-sm">Thanks for completing the form. We'll be in touch soon!</p>
+        </div>
+  <main>
+    <header>Contact Us</header>
+    <form action="" novalidate>
+      <fieldset name="personal-info">
 
-  Contact Us
+        <div class="form-element">
+          <label for="first-name">First Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="first-name" name="first-name" autocomplete="given-name" required aria-required="true">
+          <span id="first-name-error" class="sr-only error-text">This field is required</span>
+        </div>
 
-  First Name
-  This field is required
+        <div class="form-element">
+          <label for="last-name">Last Name <span aria-hidden="true">*</span></label>
+          <input type="text" id="last-name" name="last-name" autocomplete="family-name" aria-required="true" required>
+          <span id="last-name-error" class="sr-only error-text">This field is required</span>
+        </div>
+        
+      </fieldset>
 
-  Last Name
-  This field is required
+      <div class="form-element">
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" autocomplete="email" aria-required="true" aria-invalid="true" aria-describedby="email-error" required>
+        <span id="email-error" class="sr-only error-text">Please enter a valid email address</span>
+      </div>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+      <fieldset name="query-type" aria-invalid="true" aria-describedby="query-type-error">
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+        <legend>Query Type <span aria-hidden="true">*</span></legend>
 
-  Message
-  This field is required
+        <div class="group-form-element">
+          <input type="radio" name="format" id="general-enquiry" value="general-enquiry">
+          <label for="general-enquiry">General Enquiry</label>
+        </div>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
+        <div class="group-form-element">
+          <input type="radio" name="format" id="support-request" value="support-request">
+          <label for="support-request">Support Request</label>
+        </div>
 
-  Submit
+        <span id="query-type-error" class="sr-only error-text">Please select a query type</span>
+        
+      </fieldset>
 
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
+      <div class="form-element">
+        <label for="message">Message <span aria-hidden="true">*</span></label>
+        <textarea name="message" id="message" required aria-required="true" rows="10" aria-invalid="true"></textarea>
+        <span id="message-error" class="sr-only error-text">This field is required</span>
+      </div>
+
+      <div class="form-element">
+
+        <div class="confirmation-form-element">
+          <input type="checkbox" name="consent" id="consent" required aria-required="true" aria-invalid="true" aria-describedby="consent-error">
+          <label for="consent"><span>I consent to being contacted by the team <span aria-hidden="true">*</span></span></label>
+        </div>
+
+        <span id="consent-error" class="sr-only error-text">To submit this form, please consent to being contacted</span>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </main>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/devmd1997/contact-form">Devon Adams</a>.
   </div>
+
+  <script src="./main.js"></script>
 </body>
 </html>

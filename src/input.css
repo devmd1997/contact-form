@@ -1,1 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
+
+@theme {
+    --color-green-200: hsl(148, 38%, 91%);
+    --color-green-600: hsl(169, 82%, 27%);
+    --color-red: hsl(0, 66%, 54%);
+
+    --color-white: hsl(0, 0%, 100%);
+    --color-grey-500: hsl(186, 15%, 59%);
+    --color-grey-900: hsl(187, 24%, 22%);
+
+    --font-karla: 'Karla', sans-serif;
+
+    --text-sm: 14px;
+    --text-base: 16px;
+
+    /* Spacing */
+    --spacing: 8px;
+
+    --radius-sm: 5px;
+    --radius-md: 15px;
+    --radius-lg: 25px;
+
+
+    /* Breakpoints */
+    --breakpoint-sm: 375px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1440px;
+}
+
+@utility header-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--color-grey-900);
+}
+
+@utility error-text {
+    font-size: 16px;
+    color: var(--color-red);
+}
+
+@layer base {
+
+
+    body {
+        @apply bg-green-200 min-h-screen px-2 py-3 md:py-12 font-karla items-center justify-center;
+    }
+
+    main {
+        @apply bg-white rounded-md p-3 flex flex-col gap-2 max-w-[800px] mx-auto;
+    }
+
+    form {
+        @apply flex flex-col gap-2 items-start;
+    }
+
+    header {
+        @apply header-text;
+    }
+
+    label {
+        @apply text-grey-900 text-[16px] flex flex-row gap-1;
+    }
+
+    legend {
+        @apply text-grey-900 text-[16px] flex flex-row gap-1 pb-1;
+    }
+
+    input[type="text"], input[type="email"] {
+        @apply border border-grey-500 rounded-sm py-1 px-2 focus:outline-green-600 hover:border-green-600 cursor-pointer;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+        cursor: pointer;
+        accent-color: var(--color-green-600);
+    }
+
+    fieldset{
+        @apply flex flex-col md:flex-row gap-1 w-full;
+    }
+
+    textarea {
+        @apply border border-grey-500 rounded-sm px-2 py-1 focus:outline-green-600 hover:border-green-600 cursor-pointer;
+    }
+
+    button {
+        @apply bg-green-600 text-white py-2 text-center w-full rounded-sm mt-3 cursor-pointer hover:bg-grey-900;
+    }
+}
+
+@layer components {
+    .form-element {
+        @apply flex flex-col gap-1 w-full;
+    }
+
+    .group-form-element {
+        @apply flex flex-row gap-1 w-full border border-grey-500 rounded-sm py-1 px-2 cursor-pointer;
+        
+        @apply focus-within:outline-green-600 has-[:checked]:bg-green-200 has-[:checked]:border-green-600;
+        
+        label {
+            @apply text-[18px] text-grey-900 cursor-pointer;
+        }
+    }
+
+    .confirmation-form-element {
+        @apply flex flex-row gap-2 w-full items-center justify-start mt-2;
+    }
+
+    .sr-only {
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+
+    .toast-message {
+        @apply fixed top-2 left-1/2 -translate-x-1/2 bg-grey-900 text-white p-3 shadow-lg z-50 w-11/12 max-w-md flex flex-col gap-1 rounded-md;
+    }
+
+    .toast-title {
+        @apply flex flex-row items-center gap-2 font-bold;
+    }
+}
